@@ -26,3 +26,32 @@ This is a small chat application designed for real-time communication with other
    - Use the access code to log in and start chatting with others.
 
 Congratulations, you are now part of the chat community! Engage and communicate effortlessly in this intuitive and lightweight chat application.
+
+## Installation
+
+To get started with the application, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/johnbeelow/chat-js.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd chat-js/src
+   ```
+
+3. Install Parcel for module bundling:
+   ```bash
+   npm install --save-dev parcel
+   ```
+
+4. Install the required libraries:
+   ```bash
+   npm install date-fns --save
+   npm i js-cookie
+   ```
+
+Now the application is ready to use! To start it, use Parcel:
+```bash
+npx parcel index.html 
