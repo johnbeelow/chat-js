@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Chat</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="widget_chat" id="widget_chat">
+            <div id="overlay" class="overlay"></div>
+            <div class="status_container">
+                <div id="loader" class="loader"></div>
+            </div>
+
+            <div class="btn_container">
+                <button id="btn_setting">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="btn" width="26" height="26" viewBox="0 0 512 512">
+
+                        <path
+                            d="M262.29,192.31a64,64,0,1,0,57.4,57.4A64.13,64.13,0,0,0,262.29,192.31ZM416.39,256a154.34,154.34,0,0,1-1.53,20.79l45.21,35.46A10.81,10.81,0,0,1,462.52,326l-42.77,74a10.81,10.81,0,0,1-13.14,4.59l-44.9-18.08a16.11,16.11,0,0,0-15.17,1.75A164.48,164.48,0,0,1,325,400.8a15.94,15.94,0,0,0-8.82,12.14l-6.73,47.89A11.08,11.08,0,0,1,298.77,470H213.23a11.11,11.11,0,0,1-10.69-8.87l-6.72-47.82a16.07,16.07,0,0,0-9-12.22,155.3,155.3,0,0,1-21.46-12.57,16,16,0,0,0-15.11-1.71l-44.89,18.07a10.81,10.81,0,0,1-13.14-4.58l-42.77-74a10.8,10.8,0,0,1,2.45-13.75l38.21-30a16.05,16.05,0,0,0,6-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16,16,0,0,0-6.07-13.94l-38.19-30A10.81,10.81,0,0,1,49.48,186l42.77-74a10.81,10.81,0,0,1,13.14-4.59l44.9,18.08a16.11,16.11,0,0,0,15.17-1.75A164.48,164.48,0,0,1,187,111.2a15.94,15.94,0,0,0,8.82-12.14l6.73-47.89A11.08,11.08,0,0,1,213.23,42h85.54a11.11,11.11,0,0,1,10.69,8.87l6.72,47.82a16.07,16.07,0,0,0,9,12.22,155.3,155.3,0,0,1,21.46,12.57,16,16,0,0,0,15.11,1.71l44.89-18.07a10.81,10.81,0,0,1,13.14,4.58l42.77,74a10.8,10.8,0,0,1-2.45,13.75l-38.21,30a16.05,16.05,0,0,0-6.05,14.08C416.17,247.67,416.39,251.83,416.39,256Z"
+                            style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:30px"
+                            fill="currentColor"></path>
+                    </svg>
+                </button>
+
+                <div class="logo_text">
+                    <p>Messenger</p>
+                    <div class="circle-status-socket_box">
+                        <div id="circle-status-socket" class="circle-status-socket"></div>
+                    </div>
+                </div>
+
+                <button id="btn_exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="btn" height="30" width="30" viewBox="0 0 21 21">
+                        <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
+                            transform="translate(4 3)">
+                            <path d="m10.595 10.5 2.905-3-2.905-3" />
+                            <path d="m13.5 7.5h-9" />
+                            <path
+                                d="m10.5.5-8 .00224609c-1.1043501.00087167-1.9994384.89621131-2 2.00056153v9.99438478c0 1.1045695.8954305 2 2 2h8.0954792" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="window_container" id="window_container">
+
+                <template id="message_user">
+                    <div class="message__main_user">
+                        <p class="message_text__main_user">Beelow</p>
+                        <p class="message_text" id="message_text">Добрый утро !</p>
+                        <div class="message_info">
+                            <p class="message_date">07:30</p>
+                        </div>
+                </template>
+
+                <template id="message_only">
+                    <div class="message__only_users">
+                        <p class="message__text__other_users">Конь в пальто</p>
+                        <p class="message_text">Добрый вечер.</p>
+                        <div class="message_info">
+                            <p class="message_date">20:40</p>
+                        </div>
+                    </div>
+                </template>
+
+                <template id="system_message_box">
+                    <div class="message_system_box">
+                        <p class="system_message"> Системное сообщение</p>
+                    </div>
+                </template>
+
+            </div>
+
+            <div class="massage_container" id="massage_container">
+                <form action="#">
+                    <label for="message_form_input">
+                        <input class="message-form-input" id="message_form_input" type="text" name="input_message"
+                            placeholder="Сообщение" autocomplete="off">
+                    </label>
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 496 512">
+                            <path
+                                d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal_window" id="setting_window">
+                <div class="top_box">
+                    <p>Настройки</p>
+                    <button class="btn_close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="setting_name_box">
+                    <p>Имя в чате:</p>
+                    <form action="#">
+                        <label for="input_name">
+                            <input type="text" name="input_name" id="input_name" placeholder="Введите ваш ник"
+                                autocomplete="off">
+                            <button type="submit" id="change_name" class="btn_setting_complete">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 512 512">
+                                    <path
+                                        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z" />
+                                </svg>
+                        </label>
+                        </button>
+                    </form>
+                    <div class="setting_box_status">
+                        <p id="user_name">Имя: - </p>
+                        <p id="user_email">Почта: - </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal_window" id="auth_window">
+                <div class="top_box">
+                    <p>Авторизация</p>
+                    <button class="btn_close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="mail_box">
+                    <p>Почта:</p>
+                    <form action="#">
+                        <label for="input_mail">
+                            <input type="email" name="input_mail" id="input_mail" placeholder="Введите почту"
+                                autocomplete="off">
+                            <div class="button_sector">
+                                <button type="submit" id="get_code">
+                                    Получить код
+                                </button>
+                                <button type="submit" id="open_page_code">
+                                    Ввести код
+                                </button>
+                            </div>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal_window" id="enter_window">
+                <div class="top_box">
+                    <p>Подтверждение</p>
+                    <button class="btn_close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="mail_box">
+                    <p>Код:</p>
+                    <form action="#">
+                        <label for="input_code">
+                            <input type="email" name="input_code" id="input_code" placeholder="Введите код"
+                                autocomplete="off">
+                            <button type="submit" id="btn_enter">
+                                Войти
+                            </button>
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/main.mjs"></script>
+</body>
+
+</html>
