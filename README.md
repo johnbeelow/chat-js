@@ -1,3 +1,5 @@
+![chat_rev](https://github.com/user-attachments/assets/41f41707-37a7-4e8d-9343-a7f65077cc2c)
+
 # Overview
 
 This is a small chat application designed for real-time communication with other chat participants. The application is written in plain JavaScript and utilizes Parcel for efficient module bundling and high performance.
