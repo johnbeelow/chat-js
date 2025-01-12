@@ -15,7 +15,7 @@ This is a small chat application designed for real-time communication with other
 - **Message Differentiation**: Clear visual distinction between messages from the user and other participants in the chat.
 
 ## How to Use
-
+![chat_UTH](https://github.com/user-attachments/assets/62aa37c3-3768-4b2d-bec3-4d0382df2e27)
 1. **Complete Initial Registration**:
    - Provide the required information to register for the chat service.
 2. **Receive Access Code**:
