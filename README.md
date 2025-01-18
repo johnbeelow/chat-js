@@ -4,7 +4,7 @@
 
 # Overview
 
-This is a small chat application designed for real-time communication with other chat participants. The application is written in plain JavaScript and utilizes Parcel for efficient module bundling and high performance.
+This is a small chat application designed to communicate with other chat participants in real time thanks to WebSocket. The application is written in simple JavaScript and uses Parcel to efficiently build modules and ensure high performance.
 
 ## Features
 
