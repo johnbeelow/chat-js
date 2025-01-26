@@ -43,15 +43,9 @@ To get started with the application, follow these steps:
    cd chat-js/src
    ```
 
-3. Install Parcel for module bundling:
+3. nstall all dependencies (including Parcel and required libraries):
    ```bash
-   npm install --save-dev parcel
-   ```
-
-4. Install the required libraries:
-   ```bash
-   npm install date-fns --save
-   npm i js-cookie
+   npm install
    ```
 
 Now the application is ready to use! To start it, use Parcel:
